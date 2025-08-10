@@ -1,0 +1,44 @@
+.contact-manager-container {
+  .top-nav {
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-container {
+      width: 30%;
+    }
+
+    .button-container {
+      display: flex;
+      column-gap: 8px;
+    }
+  }
+
+  .table-container {
+    margin: 0px 16px 16px;
+
+    .action-icon-primary {
+      background-color: #eff6ff;
+    }
+    .action-icon-error {
+      background-color: #fff1f2;
+    }
+
+    .disabled-action-icon {
+      svg {
+        color: #ccc !important;
+        cursor: not-allowed;
+      }
+    }
+
+    .action-icon-error,
+    .action-icon-primary {
+      border-radius: 4px;
+      padding: 2px 4px;
+      margin-bottom: 4px;
+      cursor: pointer;
+    }
+  }
+}

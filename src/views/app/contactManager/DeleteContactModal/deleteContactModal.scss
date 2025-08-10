@@ -1,0 +1,18 @@
+.delete-modal-container {
+  top: 5%;
+  left: 50%;
+  width: 360px;
+  max-height: 238px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #fff;
+  transform: translate(-50%, -5%);
+  color: #334155;
+
+  .top-section {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,31 @@
+.textfield-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .textfield-label {
+    color: #64748b;
+
+    .textfield-required {
+      color: red;
+      margin-left: 2px;
+    }
+  }
+
+  .textfield-input {
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 8px 12px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: #c0c4c8;
+    }
+
+    &:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+  }
+}

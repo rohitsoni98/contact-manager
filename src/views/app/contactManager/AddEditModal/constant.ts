@@ -1,0 +1,82 @@
+const StateOptions = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+];
+
+const ModalContentConfig = [
+  {
+    id: 1,
+    label: "Name",
+    required: true,
+    accessorKeyName: "name",
+  },
+  {
+    id: 2,
+    label: "Contact No.",
+    required: true,
+    accessorKeyName: "number",
+  },
+  {
+    id: 3,
+    label: "Email",
+    type: "email",
+    required: true,
+    accessorKeyName: "email",
+  },
+  {
+    id: 4,
+    label: "Address Line 1",
+    required: true,
+    accessorKeyName: "addressLine1",
+  },
+  {
+    id: 5,
+    label: "Address Line 2 (Optional)",
+    accessorKeyName: "addressLine2",
+  },
+  {
+    id: 6,
+    label: "State",
+    required: true,
+    accessorKeyName: "state",
+    fieldType: "selectBox",
+    options: StateOptions.map((name) => ({
+      name,
+      value: name,
+    })),
+  },
+  {
+    id: 7,
+    label: "Pincode",
+    required: true,
+    accessorKeyName: "pincode",
+  },
+];
+
+export { ModalContentConfig };

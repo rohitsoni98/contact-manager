@@ -1,0 +1,38 @@
+$primary-color: #006efa;
+$white: #fff;
+$disabled-bg: #cbd5e1;
+
+.btn-container {
+  .contained,
+  .text,
+  .disabled {
+    padding: 7px 20px;
+    border-radius: 4px;
+  }
+
+  .contained,
+  .text {
+    cursor: pointer;
+  }
+
+  .contained,
+  .disabled {
+    border: none;
+    color: $white;
+  }
+
+  .contained {
+    background-color: $primary-color;
+  }
+
+  .text {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    background-color: $white;
+  }
+
+  .disabled {
+    cursor: not-allowed;
+    background-color: $disabled-bg;
+  }
+}

@@ -1,0 +1,23 @@
+p {
+  user-select: none;
+}
+
+li {
+  user-select: none;
+}
+
+.sticky {
+  top: 0;
+  z-index: 10;
+  position: sticky;
+  background-color: #fff;
+}
+
+tr,
+td {
+  user-select: none;
+}
+
+[type="checkbox"] {
+  cursor: pointer;
+}
