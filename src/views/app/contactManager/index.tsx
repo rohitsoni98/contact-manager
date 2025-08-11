@@ -28,20 +28,8 @@ import { RootState } from "../../../redux/store";
 import "./contactManager.scss";
 import "../../pages.scss";
 
-const initialEditModalData = {
-  id: "",
-  name: "",
-  state: "",
-  pincode: "",
-  email: "",
-  number: "",
-  address: "",
-  addressLine1: "",
-};
-
 const ContactManager = () => {
-  const [editModalData, setEditModalData] =
-    useState<Contact>(initialEditModalData);
+  const [editModalData, setEditModalData] = useState<Contact | null>(null);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [isDeleteModal, setIsDeleteModal] = useState<boolean>(false);
   const [singleDeleteId, setSingleDeleteId] = useState("");
@@ -169,6 +157,7 @@ const ContactManager = () => {
           open={openModal}
           setOpenModal={setOpenModal}
           editModalData={editModalData}
+          setEditModalData={setEditModalData}
         />
       )}
 

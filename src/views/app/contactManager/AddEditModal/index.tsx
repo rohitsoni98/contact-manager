@@ -22,27 +22,26 @@ const AddContactModal = ({
   open,
   setOpenModal,
   editModalData,
+  setEditModalData,
 }: {
   open: boolean;
-  editModalData?: Contact;
+  editModalData?: Contact | null;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setEditModalData: React.Dispatch<React.SetStateAction<null | Contact>>;
 }) => {
   const dispatch = useDispatch();
   const [fieldData, setFieldData] = useState<Record<string, string>>({});
 
-  const isEditMode = useMemo(() => {
-    return Object.values(editModalData || {}).every(Boolean);
-  }, [editModalData]);
-
   useEffect(() => {
-    if (isEditMode) {
+    if (editModalData) {
       setFieldData(editModalData as any);
     }
-  }, [editModalData, isEditMode]);
+  }, [editModalData]);
 
   const toggleModal = () => {
     setOpenModal(false);
     setFieldData({});
+    setEditModalData(null);
   };
 
   const handleFieldChange = (key: string, value: string) => {
@@ -83,8 +82,8 @@ const AddContactModal = ({
       }, ${fieldData.pincode}`,
     };
 
-    dispatch(isEditMode ? editContact(newContact) : addContact(newContact));
-    alert(`${isEditMode ? "Update" : "Add"} Entry Successfully`);
+    dispatch(editModalData ? editContact(newContact) : addContact(newContact));
+    alert(`${editModalData ? "Update" : "Add"} Entry Successfully`);
     toggleModal();
   };
 
@@ -143,7 +142,7 @@ const AddContactModal = ({
         <div className="action-section">
           <Button variant="text" label="Cancel" onClick={toggleModal} />
           <Button
-            label={`${isEditMode ? "Update" : "Add"} Contact`}
+            label={`${editModalData ? "Update" : "Add"} Contact`}
             onClick={onCreateEntry}
             disabled={!isValid}
           />
